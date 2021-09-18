@@ -19,12 +19,32 @@ struct ContentView: View {
                 .ignoresSafeArea(.all)
             ScrollView(.horizontal)
             {
-                VStack
+                HStack
                 {
                      Text("Don't be Depressed")
                          .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                          .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                          .colorScheme(ColorScheme.light)
+                    
+                    HStack
+                    {
+                        Text("Legend")
+                        HStack
+                        {
+                            Text("Available Seat:")
+                            Text(" ")
+                                .frame(width:20, height:20)
+                                .background(Color.green)
+                        }
+                        HStack
+                        {
+                            Text("Taken Seat that you can notify:")
+                            Text(" ")
+                                .frame(width:20, height:20)
+                                .background(Color.black)
+                        }
+                        
+                    }
                     ScrollView()
                     {
                         HStack{
@@ -175,26 +195,7 @@ struct ContentView: View {
                     }
                 
                 
-                
-                VStack
-                {
-                    Text("Legend")
-                    HStack
-                    {
-                        Text("Available Seat:")
-                        Text(" ")
-                            .frame(width:20, height:20)
-                            .background(Color.green)
-                    }
-                    HStack
-                    {
-                        Text("Taken Seat that you can notify:")
-                        Text(" ")
-                            .frame(width:20, height:20)
-                            .background(Color.black)
-                    }
-                    
-                }
+    
             }
             
             }
