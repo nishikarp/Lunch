@@ -272,10 +272,10 @@ struct Seat: View {
             else if(clicker==1)
             {
                 
-                Text("Claim Seat?")
-                    .frame(width:50, height:50)
-                    .background(Color.red)
-                    .cornerRadius(2)
+//                 Text("Claim Seat?")
+//                     .frame(width:50, height:50)
+//                     .background(Color.red)
+//                     .cornerRadius(2)
                 
                 ZStack (){
 
