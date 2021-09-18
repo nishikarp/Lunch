@@ -42,6 +42,7 @@ struct ContentView: View {
                     NavigationLink(destination: PortraitWallView())
                         { Text("Cereal Tables") }
                         .padding(20)
+                    Image("FFCLayout").resizable().scaledToFit()
                 }
                 }
             }
@@ -179,7 +180,6 @@ struct Seat: View {
     @State var clicker=0;
     @State var showPopup=false;
    // @Environment(\.presentationMode) var presentationMode
-
     
     var body: some View {
         
@@ -232,7 +232,6 @@ struct Seat: View {
 //
 //            }
                 //if(clicker) is equal to 2 and is then clicked-> bring up 4 pop up option surroundng it, asking ping user that someone is nearby, ask to message user, report as unclaimed now, X button.
-
             }
         } label: {
             if(clicker==0)
@@ -278,7 +277,6 @@ struct Seat: View {
                                                     clicker=0;
                                                 }
                                                // self.showPopup.toggle();
-
                                             }, label: {
                                                 Text("Close")
                                             }).buttonStyle(DefaultButtonStyle())
@@ -303,7 +301,6 @@ struct Seat: View {
             else if(clicker==3)
             {
                 //self.showPopup.toggle();
-
                 //if (self.$showPopUp.wrappedValue) {
                 
               //  }
@@ -343,7 +340,6 @@ struct Seat: View {
                                         }).buttonStyle(DefaultButtonStyle())
                                    // }
                                   //  Spacer()
-
                                   //  HStack {
                                         Button(action: {
                                             //print("close")
@@ -354,7 +350,6 @@ struct Seat: View {
                                                 clicker=2;
                                             }
                                            // self.showPopup.toggle();
-
                                         }, label: {
                                             Text("Close")
                                         }).buttonStyle(DefaultButtonStyle())
@@ -445,6 +440,3 @@ struct ExtractedView3: View {
         }
     }
 }
- 
-
-
