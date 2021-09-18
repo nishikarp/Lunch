@@ -1,206 +1,180 @@
+//
+//  ContentView.swift
+//  Shared
+//
+//  Created by Nishikar Paruchuri on 9/17/21.
+//
+ 
 import SwiftUI
-
+ 
 struct ContentView: View {
     @State private var clicked=false;
-
+    //@State private var button1: Bool = false
+   // @State private var button2 = false;
+ //   @State private var button3 = false;
+//    @State private var button4 = false;
+ 
     var body: some View {
-            //.padding()
-        //ExtractedView3()
-        ZStack
-        {
-            LinearGradient(gradient: Gradient(colors: [Color.blue, Color.white, Color.blue]), startPoint: .topLeading, endPoint: .bottomTrailing)
-                .ignoresSafeArea(.all)
-            ScrollView(.horizontal)
-            {
-                VStack
-                {
-                    Text("Don't be Depressed")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .colorScheme(ColorScheme.light)
-                    ScrollView()
-                    {
-                        HStack{
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                        }
-                        HStack{
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            
-                        }
-                        
-                        HStack{
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            
-                        }
-                        
-                        
-                        HStack{
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                        }
-                        HStack{
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                        }
-                        HStack{
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                        }
-                        HStack{
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                        }
-                        HStack{
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                        }
-                        HStack{
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                        }
-                        HStack{
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                            ExtractedView3()
-                                .padding(20)
-                        }
-                    }
-                    
-                    
-                    
-                    VStack
-                    {
-                        Text("Legend")
-                        HStack
-                        {
-                            Text("Available Seat:")
-                            Text(" ")
-                                .frame(width:20, height:20)
-                                .background(Color.green)
-                        }
-                        HStack
-                        {
-                            Text("Taken Seat that you can notify:")
-                            Text(" ")
-                                .frame(width:20, height:20)
-                                .background(Color.black)
-                        }
-                        
-                    }
+            NavigationView{
+                ZStack {
+                    LinearGradient(gradient: Gradient(colors: [Color.blue, Color.white, Color.blue]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                        .ignoresSafeArea(.all)
+                VStack{
+                    Text("JHU")
+                      .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                      .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                      .colorScheme(ColorScheme.light)
+                      .padding(10)
+                    Text("Fresh Food Cafe")
+                      .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                      .font(.title)
+                      .colorScheme(ColorScheme.light)
+                      .padding(20)
+                    NavigationLink(destination: EntranceView())
+                        { Text("Entrance Tables") }
+                        .padding(20)
+                    NavigationLink(destination: PairTableView())
+                        { Text("Dessert Tables") }
+                        .padding(20)
+                    NavigationLink(destination: DrinkView())
+                        { Text("Drink Tables") }
+                        .padding(20)
+                    NavigationLink(destination: PortraitWallView())
+                        { Text("Cereal Tables") }
+                        .padding(20)
                 }
-                
+                }
             }
-        }
+                        
+        //                        VStack{
+        //                        Text("Legend")
+        //                            .fontWeight(.bold)
+        //                            .padding(5)
+        //                        Text("Available Seat:")
+        //                            .padding(5)
+        //                        Text(" ")
+        //                            .frame(width:20, height:20)
+        //                            .background(Color.green)
+        //                            .padding(5)
+        //                        Text("Taken Seat that you can notify:")
+        //                            .padding(5)
+        //                        Text(" ")
+        //                            .frame(width:20, height:20)
+        //                            .background(Color.black)
+        //                        }
+                                
+                            
+    }
+       
 }
-            }
-               // .padding();
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
-
+ 
+ 
+struct PortraitWallView : View {
+    
+    
+    var body: some View {
+        ScrollView{
+            
+            ExtractedView3()
+                .padding(20)
+            ExtractedView3()
+                .padding(20)
+            ExtractedView3()
+                .padding(20)
+            ExtractedView3()
+                .padding(20)
+            ExtractedView3()
+                .padding(20)
+            ExtractedView3()
+                .padding(20)
+            ExtractedView3()
+                .padding(20)
+        
+        }
+    }
+}
+ 
+struct DrinkView : View {
+    
+    var body: some View {
+        ScrollView {
+    ExtractedView3()
+        .padding(20)
+    ExtractedView3()
+        .padding(20)
+    ExtractedView3()
+        .padding(20)
+    ExtractedView3()
+        .padding(20)
+    ExtractedView3()
+        .padding(20)
+    ExtractedView3()
+        .padding(20)
+    ExtractedView3()
+        .padding(20)
+    ExtractedView3()
+        .padding(20)
+    ExtractedView3()
+        .padding(20)
+        }
+    }
+}
+ 
+struct PairTableView : View {
+   
+    var body: some View {
+        ScrollView {
+    ExtractedView3()
+        .padding(20)
+    ExtractedView3()
+        .padding(20)
+    ExtractedView3()
+        .padding(20)
+    ExtractedView3()
+        .padding(20)
+    ExtractedView3()
+        .padding(20)
+    ExtractedView3()
+        .padding(20)
+        }
+    }
+}
+ 
+struct EntranceView : View {
+   
+    var body: some View {
+        ScrollView {
+    ExtractedView3()
+        .padding(20)
+    ExtractedView3()
+        .padding(20)
+    ExtractedView3()
+        .padding(20)
+    ExtractedView3()
+        .padding(20)
+    ExtractedView3()
+        .padding(20)
+    ExtractedView3()
+        .padding(20)
+    ExtractedView3()
+        .padding(20)
+    ExtractedView3()
+        .padding(20)
+    ExtractedView3()
+        .padding(20)
+        }
+        
+    }
+}
+ 
+ 
+ 
+ 
 struct Seat: View {
     @State var clicker=0;
     @State var showPopup=false;
@@ -417,7 +391,23 @@ struct Seat: View {
         }
     }
 }
-
+ 
+ 
+struct Table: View {
+    @State var clicked=false;
+    var body: some View {
+        Button{
+             clicked.toggle();
+         } label: {
+             Text("Available Table")
+                 .frame(width:100, height:50)
+                 .background(clicked ? Color.yellow : Color.black)
+                 .cornerRadius(100)
+ 
+         }
+    }
+}
+ 
 struct ExtractedView3: View {
     var body: some View {
         VStack
@@ -428,10 +418,10 @@ struct ExtractedView3: View {
                     .padding(5)
                 Seat()
                     .padding(5)
-
+ 
                 Seat()
                     .padding(1)
-
+ 
                 
             }
             HStack
@@ -440,10 +430,10 @@ struct ExtractedView3: View {
                     .padding(5)
                 Table()
                     .padding(5)
-
+ 
                 Seat()
                     .padding(5)
-
+ 
                 
             }
             HStack
@@ -455,17 +445,6 @@ struct ExtractedView3: View {
         }
     }
 }
-struct Table: View {
-    @State var clicked=false;
-    var body: some View {
-        Button{
-             clicked.toggle();
-         } label: {
-             Text("Available Table")
-                 .frame(width:100, height:50)
-                 .background(clicked ? Color.yellow : Color.black)
-                 .cornerRadius(100)
+ 
 
-         }
-    }
-}
+
