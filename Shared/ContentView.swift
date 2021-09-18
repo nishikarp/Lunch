@@ -23,12 +23,34 @@ struct ContentView: View {
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .colorScheme(ColorScheme.light)
+               
+                HStack{
                 ExtractedView3()
                     .padding(20)
                 ExtractedView3()
                     .padding(20)
                 ExtractedView3()
                    .padding(20)
+                
+                }
+                HStack{
+                ExtractedView3()
+                    .padding(20)
+                ExtractedView3()
+                    .padding(20)
+                ExtractedView3()
+                   .padding(20)
+                
+                }
+                HStack{
+                ExtractedView3()
+                    .padding(20)
+                ExtractedView3()
+                    .padding(20)
+                ExtractedView3()
+                   .padding(20)
+                
+                }
                 
                 VStack
                 {
