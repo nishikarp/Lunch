@@ -17,13 +17,14 @@ struct ContentView: View {
         {
             LinearGradient(gradient: Gradient(colors: [Color.blue, Color.white, Color.blue]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea(.all)
+            ScrollView(.horizontal){
             VStack
             {
                 Text("Don't be Depressed")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                     .colorScheme(ColorScheme.light)
-               
+              
                 HStack{
                 ExtractedView3()
                     .padding(20)
@@ -33,6 +34,8 @@ struct ContentView: View {
                    .padding(20)
                 
                 }
+                
+             
                 HStack{
                 ExtractedView3()
                     .padding(20)
@@ -42,6 +45,8 @@ struct ContentView: View {
                    .padding(20)
                 
                 }
+                
+                
                 HStack{
                 ExtractedView3()
                     .padding(20)
@@ -51,6 +56,8 @@ struct ContentView: View {
                    .padding(20)
                 
                 }
+                
+                
                 
                 VStack
                 {
@@ -73,7 +80,7 @@ struct ContentView: View {
                 }
             }
             
-           
+            }
         }
 }
             }
