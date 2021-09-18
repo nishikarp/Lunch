@@ -203,8 +203,12 @@ struct ContentView_Previews: PreviewProvider {
 
 struct Seat: View {
     @State var clicker=0;
+    @State var showPopup=false;
+   // @Environment(\.presentationMode) var presentationMode
+
     
     var body: some View {
+        
         Button{
             if(clicker<4)
             {
@@ -225,11 +229,34 @@ struct Seat: View {
             }
             if(clicker>=2)
             {
-                let seconds = 30.0
-                DispatchQueue.main.asyncAfter(deadline: .now() + seconds)
-                {
-                    clicker=0;
-                }
+                self.showPopup.toggle();
+
+//                let seconds = 7.0
+//                DispatchQueue.main.asyncAfter(deadline: .now() + seconds)
+//                {
+//                    clicker=0;
+//                }
+//            if(clicker==2)
+//            {
+////                if self.$showPopUp.wrappedValue {
+////                        ZStack {
+////                            Color.white
+////                            VStack {
+////                                Text("Custom Pop Up")
+////                                Spacer()
+////                                Button(action: {
+////                                    self.showPopUp = false
+////                                }, label: {
+////                                    Text("Close")
+////                                })
+////                            }.padding()
+////                        }
+////                        .frame(width: 300, height: 200)
+////                        .cornerRadius(20).shadow(radius: 20)
+////                    }
+//
+//
+//            }
                 //if(clicker) is equal to 2 and is then clicked-> bring up 4 pop up option surroundng it, asking ping user that someone is nearby, ask to message user, report as unclaimed now, X button.
 
             }
@@ -238,36 +265,148 @@ struct Seat: View {
             {
               //  Text("Available Seat")
                 Text("")
-                    .frame(width:30, height:30)
+                    .frame(width:50, height:50)
                     .background(Color.green)
                     .cornerRadius(2)
             }
             else if(clicker==1)
             {
+                
                 Text("Claim Seat?")
-                    .frame(width:30, height:30)
+                    .frame(width:50, height:50)
                     .background(Color.red)
                     .cornerRadius(2)
+                
+                ZStack (){
+
+                                    Color.black;
+                                    VStack (spacing: 50) {
+                                      //  HStack() {
+                                            Button(action: {
+                                                
+                                               
+                                                
+                                                    clicker=2;
+                                                
+                                               // print("Hello");
+                                                //Should actually be pingNearbyUsers()
+                                            }, label: {
+                                                Text("Claim Seat")
+                                            }).buttonStyle(DefaultButtonStyle())
+                               
+
+                                            Button(action: {
+                                                //print("close")
+                                               // let second = 0.001
+                                               // let second = 0.0
+                                                DispatchQueue.main.asyncAfter(deadline: .now())
+                                                {
+                                                    clicker=0;
+                                                }
+                                               // self.showPopup.toggle();
+
+                                            }, label: {
+                                                Text("Close")
+                                            }).buttonStyle(DefaultButtonStyle())
+
+
+                                      //  }
+                                        
+                                    }.padding()
+                                    
+                                
+                                }
+                                .frame(width: 150, height: 150)
+                                .cornerRadius(20).shadow(radius: 20)
             }
             else if(clicker==2)
             {
-               // Text("Seat Claimed, Click to send message to claimer")
-                Text("")
-                    .frame(width:30, height:30)
+                Text("Seat Claimed")
+                    .frame(width:50, height:50)
                     .background(Color.black)
                     .cornerRadius(2)
             }
             else if(clicker==3)
             {
-                Text("Ping User?")
-                    .frame(width:30, height:30)
-                    .background(Color.red)
-                    .cornerRadius(2)
+                //self.showPopup.toggle();
+
+                //if (self.$showPopUp.wrappedValue) {
+                
+              //  }
+                
+            ZStack (){
+
+                                Color.black;
+                                VStack (spacing: 50) {
+                                  //  HStack() {
+                                        Button(action: {
+                                            clicker = 4;
+                                           // print("Hello");
+                                            //Should actually be pingNearbyUsers()
+                                        }, label: {
+                                            Text("Ping Nearby Users")
+                                        }).buttonStyle(DefaultButtonStyle())
+                                 //   }
+                                    //Spacer()
+                                  //  HStack {
+                                        Button(action: {
+                                           // print("What are you doing?")
+                                        }, label: {
+                                            Text("Message User")
+                                            //Should actually be messageUser()
+                                        }).buttonStyle(DefaultButtonStyle()).animation(.default)
+                                  //  }
+                                    //Spacer()
+                                    //HStack {
+                                        Button(action: {
+                                            DispatchQueue.main.asyncAfter(deadline: .now())
+                                            {
+                                                clicker=0;
+                                            }
+                                        }, label: {
+                                            Text("Unclaim Seat")
+                                            //Should actually be unclaimSeat()
+                                        }).buttonStyle(DefaultButtonStyle())
+                                   // }
+                                  //  Spacer()
+
+                                  //  HStack {
+                                        Button(action: {
+                                            //print("close")
+                                           // let second = 0.001
+                                           // let second = 0.0
+                                            DispatchQueue.main.asyncAfter(deadline: .now())
+                                            {
+                                                clicker=2;
+                                            }
+                                           // self.showPopup.toggle();
+
+                                        }, label: {
+                                            Text("Close")
+                                        }).buttonStyle(DefaultButtonStyle())
+
+
+                                  //  }
+                                    
+                                }.padding()
+                                
+                            
+                            }
+                            .frame(width: 175, height: 275)
+                            .cornerRadius(20).shadow(radius: 20)
+                    
+               // Text("Seat Claimed, Click to send message to claimer")
+//                Text("")
+//                    .frame(width:50, height:50)
+//                    .background(Color.black)
+//                    .cornerRadius(2)
+           // }
             }
+            
             else if(clicker==4)
             {
-                Text("User has been notified")
-                    .frame(width:30, height:30)
+                Text("User Notified")
+                    .frame(width:50, height:50)
                     .background(Color.black)
                     .cornerRadius(2)
             }
@@ -276,21 +415,6 @@ struct Seat: View {
             
             
         }
-    }
-}
-
-struct Table: View {
-    @State var clicked=false;
-    var body: some View {
-        Button{
-             clicked.toggle();
-         } label: {
-             Text("Available Table")
-                 .frame(width:100, height:50)
-                 .background(clicked ? Color.yellow : Color.black)
-                 .cornerRadius(100)
-
-         }
     }
 }
 
