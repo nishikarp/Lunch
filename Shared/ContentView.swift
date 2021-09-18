@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  Shared
-//
-//  Created by Nishikar Paruchuri on 9/17/21.
-//
-
 import SwiftUI
 
 struct ContentView: View {
@@ -19,24 +12,12 @@ struct ContentView: View {
                 .ignoresSafeArea(.all)
             ScrollView(.horizontal)
             {
-                HStack
+                VStack
                 {
-                    VStack{
-                     Text("Don't be Depressed")
-                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                         .colorScheme(ColorScheme.light)
-                    Text("Legend")
-                    Text("Available Seat:")
-                    Text(" ")
-                        .frame(width:20, height:20)
-                        .background(Color.green)
-                    Text("Taken Seat that you can notify:")
-                    Text(" ")
-                        .frame(width:20, height:20)
-                        .background(Color.black)
-                    }
-        
+                    Text("Don't be Depressed")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .colorScheme(ColorScheme.light)
                     ScrollView()
                     {
                         HStack{
@@ -52,7 +33,7 @@ struct ContentView: View {
                                 .padding(20)
                             ExtractedView3()
                                 .padding(20)
-                            }
+                        }
                         HStack{
                             ExtractedView3()
                                 .padding(20)
@@ -66,9 +47,9 @@ struct ContentView: View {
                                 .padding(20)
                             ExtractedView3()
                                 .padding(20)
-                    
-                            }
-                 
+                            
+                        }
+                        
                         HStack{
                             ExtractedView3()
                                 .padding(20)
@@ -82,24 +63,24 @@ struct ContentView: View {
                                 .padding(20)
                             ExtractedView3()
                                 .padding(20)
-
-                            }
-                    
-                    
-                            HStack{
-                                ExtractedView3()
-                                    .padding(20)
-                                ExtractedView3()
-                                    .padding(20)
-                                ExtractedView3()
-                                    .padding(20)
-                                ExtractedView3()
-                                    .padding(20)
-                                ExtractedView3()
-                                    .padding(20)
-                                ExtractedView3()
-                                    .padding(20)
-                            }
+                            
+                        }
+                        
+                        
+                        HStack{
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                        }
                         HStack{
                             ExtractedView3()
                                 .padding(20)
@@ -185,11 +166,30 @@ struct ContentView: View {
                                 .padding(20)
                         }
                     }
+                    
+                    
+                    
+                    VStack
+                    {
+                        Text("Legend")
+                        HStack
+                        {
+                            Text("Available Seat:")
+                            Text(" ")
+                                .frame(width:20, height:20)
+                                .background(Color.green)
+                        }
+                        HStack
+                        {
+                            Text("Taken Seat that you can notify:")
+                            Text(" ")
+                                .frame(width:20, height:20)
+                                .background(Color.black)
+                        }
+                        
+                    }
+                }
                 
-                
-    
-            }
-            
             }
         }
 }
@@ -453,5 +453,19 @@ struct ExtractedView3: View {
                 Seat()
             }
         }
+    }
+}
+struct Table: View {
+    @State var clicked=false;
+    var body: some View {
+        Button{
+             clicked.toggle();
+         } label: {
+             Text("Available Table")
+                 .frame(width:100, height:50)
+                 .background(clicked ? Color.yellow : Color.black)
+                 .cornerRadius(100)
+
+         }
     }
 }
