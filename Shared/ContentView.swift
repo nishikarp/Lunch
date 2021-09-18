@@ -17,45 +17,162 @@ struct ContentView: View {
         {
             LinearGradient(gradient: Gradient(colors: [Color.blue, Color.white, Color.blue]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea(.all)
-            ScrollView(.horizontal){
-            VStack
+            ScrollView(.horizontal)
             {
-                Text("Don't be Depressed")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    .colorScheme(ColorScheme.light)
-              
-                HStack{
-                ExtractedView3()
-                    .padding(20)
-                ExtractedView3()
-                    .padding(20)
-                ExtractedView3()
-                   .padding(20)
-                
-                }
-                
-             
-                HStack{
-                ExtractedView3()
-                    .padding(20)
-                ExtractedView3()
-                    .padding(20)
-                ExtractedView3()
-                   .padding(20)
-                
-                }
-                
-                
-                HStack{
-                ExtractedView3()
-                    .padding(20)
-                ExtractedView3()
-                    .padding(20)
-                ExtractedView3()
-                   .padding(20)
-                
-                }
+                VStack
+                {
+                     Text("Don't be Depressed")
+                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                         .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                         .colorScheme(ColorScheme.light)
+                    ScrollView()
+                    {
+                        HStack{
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            }
+                        HStack{
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                    
+                            }
+                 
+                        HStack{
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+
+                            }
+                    
+                    
+                            HStack{
+                                ExtractedView3()
+                                    .padding(20)
+                                ExtractedView3()
+                                    .padding(20)
+                                ExtractedView3()
+                                    .padding(20)
+                                ExtractedView3()
+                                    .padding(20)
+                                ExtractedView3()
+                                    .padding(20)
+                                ExtractedView3()
+                                    .padding(20)
+                            }
+                        HStack{
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                        }
+                        HStack{
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                        }
+                        HStack{
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                        }
+                        HStack{
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                        }
+                        HStack{
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                        }
+                        HStack{
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                            ExtractedView3()
+                                .padding(20)
+                        }
+                    }
                 
                 
                 
@@ -128,14 +245,14 @@ struct Seat: View {
             {
               //  Text("Available Seat")
                 Text("")
-                    .frame(width:50, height:50)
+                    .frame(width:30, height:30)
                     .background(Color.green)
                     .cornerRadius(2)
             }
             else if(clicker==1)
             {
                 Text("Claim Seat?")
-                    .frame(width:50, height:50)
+                    .frame(width:30, height:30)
                     .background(Color.red)
                     .cornerRadius(2)
             }
@@ -143,21 +260,21 @@ struct Seat: View {
             {
                // Text("Seat Claimed, Click to send message to claimer")
                 Text("")
-                    .frame(width:50, height:50)
+                    .frame(width:30, height:30)
                     .background(Color.black)
                     .cornerRadius(2)
             }
             else if(clicker==3)
             {
                 Text("Ping User?")
-                    .frame(width:50, height:50)
+                    .frame(width:30, height:30)
                     .background(Color.red)
                     .cornerRadius(2)
             }
             else if(clicker==4)
             {
                 Text("User has been notified")
-                    .frame(width:50, height:50)
+                    .frame(width:30, height:30)
                     .background(Color.black)
                     .cornerRadius(2)
             }
@@ -176,7 +293,7 @@ struct Table: View {
              clicked.toggle();
          } label: {
              Text("Available Table")
-                 .frame(width:200, height:100)
+                 .frame(width:100, height:50)
                  .background(clicked ? Color.yellow : Color.black)
                  .cornerRadius(100)
 
