@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  Shared
 //
-//  Created by Nishikar Paruchuri on 9/17/21.
+//  Created by Nishikar Paruchuri, Akhil Deo, Miseok Kim, Rosa Gao on 9/18/21.
 //
  
 import SwiftUI
@@ -130,17 +130,17 @@ struct PairTableView : View {
    
     var body: some View {
         ScrollView {
-    ExtractedView3()
+    ExtractedView2()
         .padding(20)
-    ExtractedView3()
+    ExtractedView2()
         .padding(20)
-    ExtractedView3()
+    ExtractedView2()
         .padding(20)
-    ExtractedView3()
+    ExtractedView2()
         .padding(20)
-    ExtractedView3()
+    ExtractedView2()
         .padding(20)
-    ExtractedView3()
+    ExtractedView2()
         .padding(20)
         }
     }
@@ -180,6 +180,7 @@ struct Seat: View {
     @State var clicker=0;
     @State var showPopup=false;
    // @Environment(\.presentationMode) var presentationMode
+
     
     var body: some View {
         
@@ -232,6 +233,7 @@ struct Seat: View {
 //
 //            }
                 //if(clicker) is equal to 2 and is then clicked-> bring up 4 pop up option surroundng it, asking ping user that someone is nearby, ask to message user, report as unclaimed now, X button.
+
             }
         } label: {
             if(clicker==0)
@@ -277,6 +279,7 @@ struct Seat: View {
                                                     clicker=0;
                                                 }
                                                // self.showPopup.toggle();
+
                                             }, label: {
                                                 Text("Close")
                                             }).buttonStyle(DefaultButtonStyle())
@@ -293,14 +296,17 @@ struct Seat: View {
             }
             else if(clicker==2)
             {
-                Text("Seat Claimed")
+                Text("Claimed")
                     .frame(width:50, height:50)
+                    .font(.system(size: 12, weight: .light, design: .default))
                     .background(Color.black)
+                    .foregroundColor(Color.white)
                     .cornerRadius(2)
             }
             else if(clicker==3)
             {
                 //self.showPopup.toggle();
+
                 //if (self.$showPopUp.wrappedValue) {
                 
               //  }
@@ -340,6 +346,7 @@ struct Seat: View {
                                         }).buttonStyle(DefaultButtonStyle())
                                    // }
                                   //  Spacer()
+
                                   //  HStack {
                                         Button(action: {
                                             //print("close")
@@ -350,6 +357,7 @@ struct Seat: View {
                                                 clicker=2;
                                             }
                                            // self.showPopup.toggle();
+
                                         }, label: {
                                             Text("Close")
                                         }).buttonStyle(DefaultButtonStyle())
@@ -374,10 +382,13 @@ struct Seat: View {
             
             else if(clicker==4)
             {
-                Text("User Notified")
+                Text("Users Notified")
                     .frame(width:50, height:50)
+                    .font(.system(size: 12, weight: .light, design: .default))
                     .background(Color.black)
+                    .foregroundColor(Color.white)
                     .cornerRadius(2)
+                    .multilineTextAlignment(.center)
             }
             
             
@@ -387,6 +398,15 @@ struct Seat: View {
     }
 }
  
+struct FillerSeat: View {
+    var body: some View {
+        Rectangle()
+        .fill(Color.white)
+        .frame(width:50, height:50)
+        .cornerRadius(2)
+    }
+    
+}
  
 struct Table: View {
     @State var clicked=false;
@@ -394,15 +414,42 @@ struct Table: View {
         Button{
              clicked.toggle();
          } label: {
-             Text("Available Table")
-                 .frame(width:100, height:50)
-                 .background(clicked ? Color.yellow : Color.black)
+             Text("Table")
+                 .frame(width:200, height:50)
+                 .background(Color.gray)
+                .foregroundColor(Color.white)
                  .cornerRadius(100)
  
          }
     }
 }
  
+struct ExtractedView2: View {
+    var body: some View{
+        VStack {
+            HStack {
+                Seat()
+                FillerSeat()
+                FillerSeat()
+                
+            }
+            HStack {
+                Table()
+                    .padding(5)
+                
+            }
+            HStack {
+                FillerSeat()
+                FillerSeat()
+                Seat()
+            }
+        }
+    }
+}
+
+
+
+
 struct ExtractedView3: View {
     var body: some View {
         VStack
@@ -410,33 +457,26 @@ struct ExtractedView3: View {
             HStack
             {
                 Seat()
-                    .padding(5)
+                FillerSeat()
                 Seat()
-                    .padding(5)
- 
-                Seat()
-                    .padding(1)
- 
-                
+                    
             }
             HStack
             {
-                Seat()
-                    .padding(5)
+               
                 Table()
-                    .padding(5)
- 
-                Seat()
-                    .padding(5)
- 
+                     .padding(5)
                 
             }
             HStack
             {
+                
                 Seat()
-                Seat()
-                Seat()
+            
             }
         }
     }
 }
+ 
+
+
