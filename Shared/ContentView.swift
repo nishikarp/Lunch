@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  Shared
 //
-//  Created by Nishikar Paruchuri, Akhil Deo, Miseok Kim, Rosa Gao on 9/18/21.
+//  Created by Nishikar Paruchuri, Akhil Deo, Miseok Kim, Rosa Gao on 9/17/21 - 9/19/21.
 //
  
 import SwiftUI
@@ -29,7 +29,7 @@ struct ContentView: View {
                       .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                       .font(.title)
                       .colorScheme(ColorScheme.light)
-                      .padding(20)
+                      .padding(10)
                     NavigationLink(destination: EntranceView())
                         { Text("Entrance Tables") }
                         .padding(20)
@@ -42,27 +42,14 @@ struct ContentView: View {
                     NavigationLink(destination: PortraitWallView())
                         { Text("Cereal Tables") }
                         .padding(20)
+                    NavigationLink(destination: ChatMessageView())
+                        { Text("Chat Messaging")}
+                        .padding(20)
                     Image("FFCLayout").resizable().scaledToFit()
                 }
                 }
             }
-                        
-        //                        VStack{
-        //                        Text("Legend")
-        //                            .fontWeight(.bold)
-        //                            .padding(5)
-        //                        Text("Available Seat:")
-        //                            .padding(5)
-        //                        Text(" ")
-        //                            .frame(width:20, height:20)
-        //                            .background(Color.green)
-        //                            .padding(5)
-        //                        Text("Taken Seat that you can notify:")
-        //                            .padding(5)
-        //                        Text(" ")
-        //                            .frame(width:20, height:20)
-        //                            .background(Color.black)
-        //                        }
+                
                                 
                             
     }
@@ -73,7 +60,16 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
- 
+
+struct ChatMessageView : View {
+    
+    var body: some View {
+        ScrollView{
+            
+        }
+    }
+    
+}
  
 struct PortraitWallView : View {
     
@@ -179,8 +175,8 @@ struct EntranceView : View {
 struct Seat: View {
     @State var clicker=0;
     @State var showPopup=false;
+    @State var showMessageButton=false;
    // @Environment(\.presentationMode) var presentationMode
-
     
     var body: some View {
         
@@ -206,34 +202,7 @@ struct Seat: View {
             {
                 self.showPopup.toggle();
 
-//                let seconds = 7.0
-//                DispatchQueue.main.asyncAfter(deadline: .now() + seconds)
-//                {
-//                    clicker=0;
-//                }
-//            if(clicker==2)
-//            {
-////                if self.$showPopUp.wrappedValue {
-////                        ZStack {
-////                            Color.white
-////                            VStack {
-////                                Text("Custom Pop Up")
-////                                Spacer()
-////                                Button(action: {
-////                                    self.showPopUp = false
-////                                }, label: {
-////                                    Text("Close")
-////                                })
-////                            }.padding()
-////                        }
-////                        .frame(width: 300, height: 200)
-////                        .cornerRadius(20).shadow(radius: 20)
-////                    }
-//
-//
-//            }
                 //if(clicker) is equal to 2 and is then clicked-> bring up 4 pop up option surroundng it, asking ping user that someone is nearby, ask to message user, report as unclaimed now, X button.
-
             }
         } label: {
             if(clicker==0)
@@ -246,11 +215,7 @@ struct Seat: View {
             }
             else if(clicker==1)
             {
-                
-//                 Text("Claim Seat?")
-//                     .frame(width:50, height:50)
-//                     .background(Color.red)
-//                     .cornerRadius(2)
+
                 
                 ZStack (){
 
@@ -279,7 +244,6 @@ struct Seat: View {
                                                     clicker=0;
                                                 }
                                                // self.showPopup.toggle();
-
                                             }, label: {
                                                 Text("Close")
                                             }).buttonStyle(DefaultButtonStyle())
@@ -302,34 +266,40 @@ struct Seat: View {
                     .background(Color.black)
                     .foregroundColor(Color.white)
                     .cornerRadius(2)
+                
+                
+                
+                
             }
             else if(clicker==3)
             {
                 //self.showPopup.toggle();
-
                 //if (self.$showPopUp.wrappedValue) {
                 
               //  }
                 
-            ZStack (){
+            ZStack {
 
                                 Color.black;
                                 VStack (spacing: 50) {
                                   //  HStack() {
-                                        Button(action: {
-                                            clicker = 4;
-                                           // print("Hello");
-                                            //Should actually be pingNearbyUsers()
-                                        }, label: {
-                                            Text("Ping Nearby Users")
-                                        }).buttonStyle(DefaultButtonStyle())
+//                                        Button(action: {
+//                                            clicker = 4;
+//                                           // print("Hello");
+//                                            //Should actually be pingNearbyUsers()
+//                                        }, label: {
+//                                            Text("Ping Nearby Users")
+//                                        }).buttonStyle(DefaultButtonStyle())
                                  //   }
                                     //Spacer()
                                   //  HStack {
                                         Button(action: {
                                            // print("What are you doing?")
                                         }, label: {
-                                            Text("Message User")
+                                            NavigationLink(destination: ChatMessageView())
+                                                { Text("Message Users")}
+                                               
+//                                            Text("Message Users")
                                             //Should actually be messageUser()
                                         }).buttonStyle(DefaultButtonStyle()).animation(.default)
                                   //  }
@@ -346,7 +316,6 @@ struct Seat: View {
                                         }).buttonStyle(DefaultButtonStyle())
                                    // }
                                   //  Spacer()
-
                                   //  HStack {
                                         Button(action: {
                                             //print("close")
@@ -357,7 +326,6 @@ struct Seat: View {
                                                 clicker=2;
                                             }
                                            // self.showPopup.toggle();
-
                                         }, label: {
                                             Text("Close")
                                         }).buttonStyle(DefaultButtonStyle())
@@ -369,7 +337,7 @@ struct Seat: View {
                                 
                             
                             }
-                            .frame(width: 175, height: 275)
+                            .frame(width: 185, height: 200)
                             .cornerRadius(20).shadow(radius: 20)
                     
                // Text("Seat Claimed, Click to send message to claimer")
@@ -477,6 +445,3 @@ struct ExtractedView3: View {
         }
     }
 }
- 
-
-
