@@ -7,6 +7,7 @@
  
 import UIKit
 import SwiftUI
+import WebKit
  
 struct ContentView: View {
     @State private var clicked=false;
@@ -16,7 +17,7 @@ struct ContentView: View {
 //    @State private var button4 = false;
  
     var body: some View {
-            NavigationView{
+         NavigationView{
                 ZStack {
                     LinearGradient(gradient: Gradient(colors: [Color.blue, Color.white, Color.blue]), startPoint: .topLeading, endPoint: .bottomTrailing)
                         .ignoresSafeArea(.all)
@@ -43,16 +44,23 @@ struct ContentView: View {
                     NavigationLink(destination: PortraitWallView())
                         { Text("Cereal Tables") }
                         .padding(20)
+                  NavigationLink(destination: SwiftUIWebView(url: URL(string: "https://c203-128-220-159-214.ngrok.io/chat" ))
+ )
+                      { Text("Chat Messaging") }
+                  .padding(20)
                   
-                    Button {
-                        let application = UIApplication.shared
-                        let websiteURL = URL(string: "https://c203-128-220-159-214.ngrok.io/chat")!
-                        application.open(websiteURL)
-                        
+                    /*Button {
+                        //let application = UIApplication.shared
+                        //let websiteURL = URL(string: "https://c203-128-220-159-214.ngrok.io/chat")!
+                        //application.open(websiteURL)
+                     NavigationView {
+                        SwiftUIWebView(url: URL(string: "https://c203-128-220-159-214.ngrok.io/chat" ))
+                           .navigationTitle("Messages")
+                     }
                     } label: {
                         Text("Chat Messaging");
                     }
-                    .padding(20)
+                    .padding(20)*/
 //                    NavigationLink(destination: ChatMessageView())
 //                        { Text("Chat Messaging")}
 //                        .padding(20)
@@ -74,16 +82,6 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct ChatMessageView : View {
-    
-    var body: some View {
-        ScrollView {
-            
-        }
-        
-    }
-    
-}
  
 struct PortraitWallView : View {
     
@@ -308,10 +306,14 @@ struct Seat: View {
                                     //Spacer()
                                   //  HStack {
                                     Button {
-                                        let application = UIApplication.shared
-                                        let websiteURL = URL(string: "https://c203-128-220-159-214.ngrok.io/chat")!
-                                        application.open(websiteURL)
-                                        
+                                    //   NavigationView()
+                                      // {
+                                       //    SwiftUIWebView(url: URL(string: "https://c203-128-220-159-214.ngrok.io/chat" ))
+                                       //}
+                                    //   SwiftUIWebView(url: URL(string: "https://c203-128-220-159-214.ngrok.io/chat" ))
+                                       let application = UIApplication.shared
+                                                               let websiteURL = URL(string: "https://c203-128-220-159-214.ngrok.io/chat")!
+                                                               application.open(websiteURL)
                                     } label: {
                                         Text("Message Users");
                                     }.buttonStyle(DefaultButtonStyle()).animation(.default)
@@ -402,6 +404,31 @@ struct Table: View {
                  .cornerRadius(100)
  
          }
+    }
+}
+struct SwiftUIWebView: UIViewRepresentable
+{
+    
+    let url: URL?
+    
+    func makeUIView(context: Context) -> WKWebView {
+        
+        let prefs = WKWebpagePreferences()
+        prefs.allowsContentJavaScript = true
+        let config = WKWebViewConfiguration()
+
+        config.defaultWebpagePreferences = prefs
+
+        return WKWebView(frame: .zero, configuration: config)
+    }
+    
+    func updateUIView(_ uiView: WKWebView, context: Context)
+    {
+        guard let myURL=url else {
+            return
+        }
+        let request = URLRequest(url:myURL)
+            uiView.load(request)
     }
 }
  
