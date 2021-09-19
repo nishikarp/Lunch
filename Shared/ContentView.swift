@@ -5,6 +5,7 @@
 //  Created by Nishikar Paruchuri, Akhil Deo, Miseok Kim, Rosa Gao on 9/17/21 - 9/19/21.
 //
  
+import UIKit
 import SwiftUI
  
 struct ContentView: View {
@@ -42,10 +43,22 @@ struct ContentView: View {
                     NavigationLink(destination: PortraitWallView())
                         { Text("Cereal Tables") }
                         .padding(20)
-                    NavigationLink(destination: ChatMessageView())
-                        { Text("Chat Messaging")}
-                        .padding(20)
+                  
+                    Button {
+                        let application = UIApplication.shared
+                        let websiteURL = URL(string: "https://c203-128-220-159-214.ngrok.io/chat")!
+                        application.open(websiteURL)
+                        
+                    } label: {
+                        Text("Chat Messaging");
+                    }
+                    .padding(20)
+//                    NavigationLink(destination: ChatMessageView())
+//                        { Text("Chat Messaging")}
+//                        .padding(20)
                     Image("FFCLayout").resizable().scaledToFit()
+                    
+                    
                 }
                 }
             }
@@ -64,9 +77,10 @@ struct ContentView_Previews: PreviewProvider {
 struct ChatMessageView : View {
     
     var body: some View {
-        ScrollView{
+        ScrollView {
             
         }
+        
     }
     
 }
@@ -293,15 +307,14 @@ struct Seat: View {
                                  //   }
                                     //Spacer()
                                   //  HStack {
-                                        Button(action: {
-                                           // print("What are you doing?")
-                                        }, label: {
-                                            NavigationLink(destination: ChatMessageView())
-                                                { Text("Message Users")}
-                                               
-//                                            Text("Message Users")
-                                            //Should actually be messageUser()
-                                        }).buttonStyle(DefaultButtonStyle()).animation(.default)
+                                    Button {
+                                        let application = UIApplication.shared
+                                        let websiteURL = URL(string: "https://c203-128-220-159-214.ngrok.io/chat")!
+                                        application.open(websiteURL)
+                                        
+                                    } label: {
+                                        Text("Message Users");
+                                    }.buttonStyle(DefaultButtonStyle()).animation(.default)
                                   //  }
                                     //Spacer()
                                     //HStack {
