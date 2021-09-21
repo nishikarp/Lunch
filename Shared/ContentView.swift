@@ -11,6 +11,8 @@ import WebKit
  
 struct ContentView: View {
     @State private var clicked=false;
+    @State var  someArray : [Int] =
+      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
     //@State private var button1: Bool = false
    // @State private var button2 = false;
  //   @State private var button3 = false;
@@ -32,16 +34,16 @@ struct ContentView: View {
                       .font(.title)
                       .colorScheme(ColorScheme.light)
                       .padding(10)
-                    NavigationLink(destination: EntranceView())
+                  NavigationLink(destination: EntranceView(a:1, b:2, c:3, d:4, e:5, f:6, g:7, h:8, i:9, j:10, k:11, l:12, m:13, n:14, o:15, p:16, q:17, r:18, s:19, t:20, u:21, v:22, w:23, x:24, y:25, z:26, aa:27, ab:28, ac:29, ad:30, someArr: $someArray  ))
                         { Text("Entrance Tables") }
                         .padding(20)
-                    NavigationLink(destination: PairTableView())
+                    NavigationLink(destination: PairTableView(a:31, b:32, c:33, d:34, e:35, f:36, g:37, h:38, i:39, j:40, k:41, l:42, someArr: $someArray ))
                         { Text("Dessert Tables") }
                         .padding(20)
-                    NavigationLink(destination: DrinkView())
+                    NavigationLink(destination: DrinkView(a:43, b:44, c:45, d:46, e:47, f:48, g:49, h:50, i:51, j:52, k:53, l:54, m:55, n:56, o:57, p:58, q:59, r:60, s:61, t:62, u:63, v:64, w:65, x:66, y:67, z:68, aa:69, ab:70, ac:71, ad:72, someArr: $someArray ))
                         { Text("Drink Tables") }
                         .padding(20)
-                    NavigationLink(destination: PortraitWallView())
+                  NavigationLink(destination: PortraitWallView(a:73, b:74, c:75, d:76, e:77, f:78, g:79, h:80, i:81, j:82, k:83, l:84, m:85, n:86, o:87, p:88, q:89, r:90, s:91, t:92, u:93, someArr: $someArray ))
                         { Text("Cereal Tables") }
                         .padding(20)
                   NavigationLink(destination: SwiftUIWebView(url: URL(string: "https://c203-128-220-159-214.ngrok.io/chat" ))
@@ -85,23 +87,44 @@ struct ContentView_Previews: PreviewProvider {
  
 struct PortraitWallView : View {
     
-    
+   var a:Int
+   var b:Int
+   var c:Int
+   var d:Int
+   var e:Int
+   var f:Int
+   var g:Int
+   var h:Int
+   var i:Int
+   var j:Int
+   var k:Int
+   var l:Int
+   var m:Int
+   var n:Int
+   var o:Int
+   var p:Int
+   var q:Int
+   var r:Int
+   var s:Int
+   var t:Int
+   var u:Int
+   @Binding var someArr : [Int];
     var body: some View {
         ScrollView{
             
-            ExtractedView3()
+         ExtractedView3(a:a, b:b, c:c,someArr:$someArr)
                 .padding(20)
-            ExtractedView3()
+         ExtractedView3(a:d, b:e, c:f,someArr:$someArr)
                 .padding(20)
-            ExtractedView3()
+         ExtractedView3(a:g, b:h, c:i,someArr:$someArr)
                 .padding(20)
-            ExtractedView3()
+         ExtractedView3(a:j, b:k, c:l,someArr:$someArr)
                 .padding(20)
-            ExtractedView3()
+         ExtractedView3(a:m, b:n, c:o,someArr:$someArr)
                 .padding(20)
-            ExtractedView3()
+         ExtractedView3(a:p, b:q, c:r,someArr:$someArr)
                 .padding(20)
-            ExtractedView3()
+         ExtractedView3(a:s, b:t, c:u,someArr:$someArr)
                 .padding(20)
         
         }
@@ -109,46 +132,94 @@ struct PortraitWallView : View {
 }
  
 struct DrinkView : View {
+   var a:Int
+   var b:Int
+   var c:Int
+   var d:Int
+   var e:Int
+   var f:Int
+   var g:Int
+   var h:Int
+   var i:Int
+   var j:Int
+   var k:Int
+   var l:Int
+   var m:Int
+   var n:Int
+   var o:Int
+   var p:Int
+   var q:Int
+   var r:Int
+   var s:Int
+   var t:Int
+   var u:Int
+   var v:Int
+   var w:Int
+   var x:Int
+   var y:Int
+   var z:Int
+   var aa:Int
+   var ab:Int
+   var ac:Int
+   var ad:Int
+
+   @Binding var someArr : [Int];
     
     var body: some View {
         ScrollView {
-    ExtractedView3()
-        .padding(20)
-    ExtractedView3()
-        .padding(20)
-    ExtractedView3()
-        .padding(20)
-    ExtractedView3()
-        .padding(20)
-    ExtractedView3()
-        .padding(20)
-    ExtractedView3()
-        .padding(20)
-    ExtractedView3()
-        .padding(20)
-    ExtractedView3()
-        .padding(20)
-    ExtractedView3()
-        .padding(20)
+         ExtractedView3(a:a, b:b, c:c,someArr:$someArr)
+                .padding(20)
+         ExtractedView3(a:d, b:e, c:f,someArr:$someArr)
+                .padding(20)
+         ExtractedView3(a:g, b:h, c:i,someArr:$someArr)
+                .padding(20)
+         ExtractedView3(a:j, b:k, c:l,someArr:$someArr)
+                .padding(20)
+         ExtractedView3(a:m, b:n, c:o,someArr:$someArr)
+                .padding(20)
+         ExtractedView3(a:p, b:q, c:r,someArr:$someArr)
+                .padding(20)
+         ExtractedView3(a:s, b:t, c:u,someArr:$someArr)
+                .padding(20)
+         ExtractedView3(a:v, b:w, c:x,someArr:$someArr)
+                .padding(20)
+         ExtractedView3(a:y, b:z, c:aa,someArr:$someArr)
+                .padding(20)
+         ExtractedView3(a:ab, b:ac, c:ad,someArr:$someArr)
+                .padding(20)
         }
     }
 }
  
 struct PairTableView : View {
    
-    var body: some View {
+   var a:Int
+   var b:Int
+   var c:Int
+   var d:Int
+   var e:Int
+   var f:Int
+   var g:Int
+   var h:Int
+   var i:Int
+   var j:Int
+   var k:Int
+   var l:Int
+
+   @Binding var someArr : [Int];
+   var body: some View {
         ScrollView {
-    ExtractedView2()
+         ExtractedView2(a:a, b:b, someArr: $someArr)
         .padding(20)
-    ExtractedView2()
+         ExtractedView2(a:c, b:d, someArr: $someArr)
         .padding(20)
-    ExtractedView2()
+         ExtractedView2(a:e, b:f, someArr: $someArr)
         .padding(20)
-    ExtractedView2()
+         ExtractedView2(a:g, b:h, someArr: $someArr)
         .padding(20)
-    ExtractedView2()
+         ExtractedView2(a:i, b:j, someArr: $someArr)
         .padding(20)
-    ExtractedView2()
+         ExtractedView2(a:k, b:l, someArr: $someArr)
         .padding(20)
         }
     }
@@ -156,26 +227,60 @@ struct PairTableView : View {
  
 struct EntranceView : View {
    
+   var a:Int
+   var b:Int
+   var c:Int
+   var d:Int
+   var e:Int
+   var f:Int
+   var g:Int
+   var h:Int
+   var i:Int
+   var j:Int
+   var k:Int
+   var l:Int
+   var m:Int
+   var n:Int
+   var o:Int
+   var p:Int
+   var q:Int
+   var r:Int
+   var s:Int
+   var t:Int
+   var u:Int
+   var v:Int
+   var w:Int
+   var x:Int
+   var y:Int
+   var z:Int
+   var aa:Int
+   var ab:Int
+   var ac:Int
+   var ad:Int
+
+   @Binding var someArr : [Int];
     var body: some View {
         ScrollView {
-    ExtractedView3()
-        .padding(20)
-    ExtractedView3()
-        .padding(20)
-    ExtractedView3()
-        .padding(20)
-    ExtractedView3()
-        .padding(20)
-    ExtractedView3()
-        .padding(20)
-    ExtractedView3()
-        .padding(20)
-    ExtractedView3()
-        .padding(20)
-    ExtractedView3()
-        .padding(20)
-    ExtractedView3()
-        .padding(20)
+         ExtractedView3(a:a, b:b, c:c,someArr:$someArr)
+                .padding(20)
+         ExtractedView3(a:d, b:e, c:f,someArr:$someArr)
+                .padding(20)
+         ExtractedView3(a:g, b:h, c:i,someArr:$someArr)
+                .padding(20)
+         ExtractedView3(a:j, b:k, c:l,someArr:$someArr)
+                .padding(20)
+         ExtractedView3(a:m, b:n, c:o,someArr:$someArr)
+                .padding(20)
+         ExtractedView3(a:p, b:q, c:r,someArr:$someArr)
+                .padding(20)
+         ExtractedView3(a:s, b:t, c:u,someArr:$someArr)
+                .padding(20)
+         ExtractedView3(a:v, b:w, c:x,someArr:$someArr)
+                .padding(20)
+         ExtractedView3(a:y, b:z, c:aa,someArr:$someArr)
+                .padding(20)
+         ExtractedView3(a:ab, b:ac, c:ad,someArr:$someArr)
+                .padding(20)
         }
         
     }
@@ -185,39 +290,47 @@ struct EntranceView : View {
  
  
 struct Seat: View {
-    @State var clicker=0;
-    @State var showPopup=false;
-    @State var showMessageButton=false;
+    
+   var seatId:Int;
+   @Binding var someInts: [Int];
+  // @State var clicker:Int;
+   @State var showPopup=false;
+   @State var showMessageButton=false;
    // @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         
         Button{
-            if(clicker<4)
+            if(someInts[seatId]==0)
             {
-                clicker=clicker+1;
+               print(seatId);
+               someInts[seatId]=someInts[seatId]+1;
 
             }
             
-            if(clicker==1)
+            else if(someInts[seatId]==1)
             {
-                let seconds = 10.0
+                let seconds = 200.0
                 DispatchQueue.main.asyncAfter(deadline: .now() + seconds)
                 {
-                    if(clicker==1)
+                    if(someInts[seatId]==1)
                     {
-                        clicker=0;
+                     someInts[seatId]=0;
                     }
                 }
             }
-            if(clicker>=2)
+            else if(someInts[seatId]>=2)
             {
-                self.showPopup.toggle();
+                if(someInts[seatId]<4)
+                {
+                  someInts[seatId]=someInts[seatId]+1;
+                }
+               self.showPopup.toggle();
 
                 //if(clicker) is equal to 2 and is then clicked-> bring up 4 pop up option surroundng it, asking ping user that someone is nearby, ask to message user, report as unclaimed now, X button.
             }
         } label: {
-            if(clicker==0)
+            if(someInts[seatId]==0)
             {
               //  Text("Available Seat")
                 Text("")
@@ -225,7 +338,7 @@ struct Seat: View {
                     .background(Color.green)
                     .cornerRadius(2)
             }
-            else if(clicker==1)
+            else if(someInts[seatId]==1)
             {
 
                 
@@ -238,7 +351,8 @@ struct Seat: View {
                                                 
                                                
                                                 
-                                                    clicker=2;
+                                             someInts[seatId]=2;
+
                                                 
                                                // print("Hello");
                                                 //Should actually be pingNearbyUsers()
@@ -253,7 +367,8 @@ struct Seat: View {
                                                // let second = 0.0
                                                 DispatchQueue.main.asyncAfter(deadline: .now())
                                                 {
-                                                    clicker=0;
+                                                   someInts[seatId]=0;
+
                                                 }
                                                // self.showPopup.toggle();
                                             }, label: {
@@ -270,7 +385,7 @@ struct Seat: View {
                                 .frame(width: 150, height: 150)
                                 .cornerRadius(20).shadow(radius: 20)
             }
-            else if(clicker==2)
+            else if(someInts[seatId]==2)
             {
                 Text("Claimed")
                     .frame(width:50, height:50)
@@ -283,7 +398,7 @@ struct Seat: View {
                 
                 
             }
-            else if(clicker==3)
+            else if(someInts[seatId]==3)
             {
                 //self.showPopup.toggle();
                 //if (self.$showPopUp.wrappedValue) {
@@ -323,7 +438,8 @@ struct Seat: View {
                                         Button(action: {
                                             DispatchQueue.main.asyncAfter(deadline: .now())
                                             {
-                                                clicker=0;
+                                             someInts[seatId]=0;
+
                                             }
                                         }, label: {
                                             Text("Unclaim Seat")
@@ -338,7 +454,8 @@ struct Seat: View {
                                            // let second = 0.0
                                             DispatchQueue.main.asyncAfter(deadline: .now())
                                             {
-                                                clicker=2;
+                                             someInts[seatId]=0;
+
                                             }
                                            // self.showPopup.toggle();
                                         }, label: {
@@ -363,7 +480,7 @@ struct Seat: View {
            // }
             }
             
-            else if(clicker==4)
+            else if(someInts[seatId]==4)
             {
                 Text("Users Notified")
                     .frame(width:50, height:50)
@@ -433,10 +550,13 @@ struct SwiftUIWebView: UIViewRepresentable
 }
  
 struct ExtractedView2: View {
+   var a:Int;
+   var b:Int;
+   @Binding var someArr : [Int];
     var body: some View{
         VStack {
             HStack {
-                Seat()
+               Seat(seatId:a, someInts:$someArr)
                 FillerSeat()
                 FillerSeat()
                 
@@ -449,7 +569,7 @@ struct ExtractedView2: View {
             HStack {
                 FillerSeat()
                 FillerSeat()
-                Seat()
+               Seat(seatId:b, someInts:$someArr)
             }
         }
     }
@@ -459,15 +579,19 @@ struct ExtractedView2: View {
 
 
 struct ExtractedView3: View {
+   var a:Int;
+   var b:Int;
+   var c:Int;
+   @Binding var someArr : [Int];
     var body: some View {
         VStack
         {
             HStack
             {
-                Seat()
+               Seat(seatId:a, someInts:$someArr)
                 FillerSeat()
-                Seat()
-                    
+               Seat(seatId:b, someInts:$someArr)
+
             }
             HStack
             {
@@ -479,8 +603,8 @@ struct ExtractedView3: View {
             HStack
             {
                 
-                Seat()
-            
+               Seat(seatId:c, someInts:$someArr)
+
             }
         }
     }
